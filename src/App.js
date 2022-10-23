@@ -22,7 +22,7 @@ export default function App() {
 
     axios.request(options)
       .then(function (response) {
-        console.log(response.data);
+        console.log(response.data.value);
       })
       .catch(function (error) {
         console.error(error);
@@ -36,7 +36,7 @@ export default function App() {
 
 
       <form onSubmit={getNews}>
-        <input type="text" onChange={(e) => {
+        <input type="search" onChange={(e) => {
           setTopic(e.target.value)
 
         }} />
