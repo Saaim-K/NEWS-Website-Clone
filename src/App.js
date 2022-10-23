@@ -6,8 +6,6 @@ export default function App() {
   const [topic, setTopic] = useState("");
   const [data, setData] = useState([])
 
-
-
   const getNews = (e) => {
     e.preventDefault();
     const options = {
@@ -32,23 +30,27 @@ export default function App() {
       });
   }
 
-
   return (
     <>
+      <nav>
+        <form onSubmit={getNews}>
 
+          <input type="search" onChange={
+            (e) => {
+              setTopic(e.target.value)
+            }
+          } />
 
+          {/* {console.log(topic)}; */}
+          <button type='submit'>Search</button>
 
-      <form onSubmit={getNews}>
-        <input type="search" onChange={(e) => {
-          setTopic(e.target.value)
-
-        }} />
-        {/* {console.log(topic)}; */}
-        <button type='submit'>Search</button>
-      </form>
-
+        </form>
+      </nav>
       <div>{data.map(news => (
-        
+
+        <div key={news.name}>
+          <h1>{news.name}</h1>
+        </div>
       )
       )
       }
