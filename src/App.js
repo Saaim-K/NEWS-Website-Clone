@@ -25,6 +25,7 @@ export default function App() {
       .then(function (response) {
         console.log(response.data.value);
         setData(response.data.value);
+        // console.log(data);
       })
       .catch(function (error) {
         console.error(error);
@@ -42,11 +43,16 @@ export default function App() {
           setTopic(e.target.value)
 
         }} />
-        {console.log(topic)};
+        {/* {console.log(topic)}; */}
         <button type='submit'>Search</button>
       </form>
 
-      <div>{ }</div>
+      <div>{data.map(news => (
+        
+      )
+      )
+      }
+      </div>
 
 
 
@@ -61,11 +67,11 @@ export default function App() {
 //After the onchange event is triggered the setTopic hook changes the topic value to the query typed in input
 //Both topic and settopic are in useState hook
 //As the button in the input tag clicked the form runs a getNews function.
-//The getNews has a parameter e and ee.preventDefault() to stop reloading of page onSubmit
+//The getNews has a parameter e and e.preventDefault() to stop the reloading of page onSubmit of form
 //Then data is fetched using API
-//The data that we get is of the topic that we typed in the search
-//In the response of the api call we setData to response.data.value
-//
+//The data that we got is of the topic that we typed in the search
+//In the response of the api call we setData to response.data.value in data
+//Now are data from api is saved in an array named data
 //
 //
 //
