@@ -20,11 +20,13 @@ export default function App() {
       }
     };
 
-    axios.request(options).then(function (response) {
-      console.log(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
+    axios.request(options)
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   }
 
 
@@ -41,6 +43,7 @@ export default function App() {
         <button type='submit'>Get News</button>
       </form>
 
+      <div>{ }</div>
 
 
 
