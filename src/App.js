@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function App() {
   const [topic, setTopic] = useState("");
+  const [data, setData] = useState([])
 
 
 
@@ -23,6 +24,7 @@ export default function App() {
     axios.request(options)
       .then(function (response) {
         console.log(response.data.value);
+        setData(response.data.value);
       })
       .catch(function (error) {
         console.error(error);
@@ -40,7 +42,8 @@ export default function App() {
           setTopic(e.target.value)
 
         }} />
-        <button type='submit'>Get News</button>
+        {console.log(topic)};
+        <button type='submit'>Search</button>
       </form>
 
       <div>{ }</div>
@@ -50,3 +53,22 @@ export default function App() {
     </>
   );
 }
+
+//First of all there is a form consisting of one input tag and one button.
+//The input tag has an onchange event that triggers as soon as something is typed in it
+//The onchange function gets the value from the input tag using e.target.value and set it in setTopic
+//The set topic has an initial value of topic that is empty string
+//After the onchange event is triggered the setTopic hook changes the topic value to the query typed in input
+//Both topic and settopic are in useState hook
+//As the button in the input tag clicked the form runs a getNews function.
+//The getNews has a parameter e and ee.preventDefault() to stop reloading of page onSubmit
+//Then data is fetched using API
+//In the response of the api call we setData to response.data.value
+//
+//
+//
+//
+//
+//
+//
+//
