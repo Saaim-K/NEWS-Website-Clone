@@ -63,6 +63,7 @@ export default function App() {
 //As the button in the input tag clicked the form runs a getNews function.
 //The getNews has a parameter e and ee.preventDefault() to stop reloading of page onSubmit
 //Then data is fetched using API
+//The data that we get is of the topic that we typed in the search
 //In the response of the api call we setData to response.data.value
 //
 //
