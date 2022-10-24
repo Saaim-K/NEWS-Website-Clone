@@ -76,7 +76,7 @@ export default function App() {
       </nav>
 
 
-      {(loading) ? <div className='pac-man' /> : ""}
+      {(loading) ? <div className='loader'><div className='pac-man' /></div> : ""}
 
       <div>{data.map(news => (
         <div key={news?.name}>
