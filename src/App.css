@@ -51,3 +51,8 @@ nav {
     margin-left: 10px;
     color: orange;
 }
+.images{
+    border: none;
+    width: 300px;
+    height: 300px;
+}

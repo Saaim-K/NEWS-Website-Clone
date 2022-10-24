@@ -2,10 +2,12 @@ import './App.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { BsSearch } from "react-icons/bs";
+import moment from 'moment/moment';
 
 export default function App() {
   const [topic, setTopic] = useState("");
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false);
 
   const getNews = (e) => {
     e.preventDefault();
@@ -19,12 +21,12 @@ export default function App() {
         'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
       }
     };
-
+    setLoading(true)
     axios.request(options)
       .then(function (response) {
         console.log(response.data.value);
         setData(response.data.value);
-        // console.log(data);
+        console.log(topic);
       })
       .catch(function (error) {
         console.error(error);
@@ -41,13 +43,21 @@ export default function App() {
         <form className='form' onSubmit={getNews}>
 
           <BsSearch />
-          <input type="search" onChange={(e) => {setTopic(e.target.value)}} />
+          <input type="search" onChange={(e) => { setTopic(e.target.value) }} />
         </form>
       </nav>
+
+
+      {(data.length === 0) ? 'loadingg..' : ""}
+
       <div>{data.map(news => (
 
-        <div key={news.name}>
-          <h1>{news.name}</h1>
+        <div key={news?.name}>
+          <h1>{news?.name}</h1>
+          <span>{moment(news?.datePublished).format('Do MMMM YYYY, h:mm a')}</span>
+          <span>{news?.description}</span>
+          <img src={news?.image?.thumbnail?.contentUrl.replace("&pid=News", "").replace("pid=News&", "").replace("pid=News", "")} alt="" />
+          <span>{news?.url}</span>
         </div>
       )
       )
