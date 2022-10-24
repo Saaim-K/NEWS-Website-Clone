@@ -34,8 +34,8 @@ export default function App() {
     <>
       <nav>
         <div className="hub">
-          <span contenteditable="true">NEWS</span>
-          <span contenteditable="true">hub</span>
+          <span>NEWS</span>
+          <span>hub</span>
         </div>
         <form onSubmit={getNews}>
 
