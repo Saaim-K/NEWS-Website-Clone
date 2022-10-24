@@ -64,7 +64,7 @@ export default function App() {
         </div>
         <form className='form' onSubmit={getNews}>
           <BsSearch />
-          <input type="search" onChange={(e) => { setTopic(e.target.value) }} />
+          <input type="search" placeholder='Search for topics' onChange={(e) => { setTopic(e.target.value) }} />
         </form>
       </nav>
       {(loading) ? <div className='loader'><div className='pac-man' /></div> : ""}

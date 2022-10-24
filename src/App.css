@@ -159,19 +159,6 @@ nav {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .projcard-container {
     margin: 50px 0;
     box-sizing: border-box;
@@ -238,9 +225,6 @@ nav {
     transform: scale(1.05) rotate(1deg);
 }
 
-.projcard:hover .projcard-bar {
-    width: 70px;
-}
 
 .projcard-textbox {
     position: absolute;
@@ -261,7 +245,6 @@ nav {
     content: "";
     position: absolute;
     display: block;
-    background: #ff0000bb;
     background: #fff;
     top: -20%;
     left: -55px;
@@ -290,12 +273,13 @@ nav {
 
 .projcard-title {
     font-family: 'Voces', 'Open Sans', arial, sans-serif;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .projcard-subtitle {
     font-family: 'Voces', 'Open Sans', arial, sans-serif;
-    color: #888;
+    margin-top: 4px;
+    color: #424242;
 }
 
 .projcard-bar {
@@ -305,35 +289,29 @@ nav {
     margin: 10px 0;
     border-radius: 5px;
     background-color: #424242;
-    transition: width 0.2s ease;
+    transition: width 0.5s ease;
 }
 
+.projcard:hover .projcard-bar {
+    width: 220px;
+}
 .projcard-blue .projcard-bar {
-    background-color: #0088FF;
+    background-color: #ff9900;
 }
 
 .projcard-blue::before {
-    background-image: linear-gradient(-70deg, #0088FF, transparent 50%);
+    background-image: linear-gradient(-70deg, #ff9900, transparent 50%);
 }
 
 .projcard-blue:nth-child(2n)::before {
-    background-image: linear-gradient(-250deg, #0088FF, transparent 50%);
+    background-image: linear-gradient(-250deg, #ff9900, transparent 50%);
 }
 
 .projcard-description {
     z-index: 10;
-    font-size: 15px;
+    font-size: 20px;
     color: #424242;
     height: 125px;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.projcard-tagbox {
-    position: absolute;
-    bottom: 3%;
-    font-size: 14px;
-    cursor: default;
-    user-select: none;
-    pointer-events: none;
 }
