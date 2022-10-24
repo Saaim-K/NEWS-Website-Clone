@@ -1,6 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import { useState } from 'react';
+import { BsSearch } from "react-icons/bs";
 
 export default function App() {
   const [topic, setTopic] = useState("");
@@ -37,17 +38,10 @@ export default function App() {
           <span>NEWS</span>
           <span>hub</span>
         </div>
-        <form onSubmit={getNews}>
+        <form className='form' onSubmit={getNews}>
 
-          <input type="search" onChange={
-            (e) => {
-              setTopic(e.target.value)
-            }
-          } />
-
-          {/* {console.log(topic)}; */}
-          <button type='submit'>Search</button>
-
+          <BsSearch />
+          <input type="search" onChange={(e) => {setTopic(e.target.value)}} />
         </form>
       </nav>
       <div>{data.map(news => (

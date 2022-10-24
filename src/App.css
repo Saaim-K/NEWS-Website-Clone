@@ -1,15 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-nav{
+
+nav {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     height: 53px;
-    background: #000000; 
+    background: #000000;
 }
+
 .hub {
     color: #ffffff;
     font-family: sans-serif;
@@ -25,4 +27,27 @@ nav{
     border-radius: 6px;
     padding: 3px 10px 3px 10px;
     margin-left: 2px;
+}
+
+
+.form {
+    border: none;
+    background: #272B33;
+    color: orange;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 20px;
+}
+
+.form input {
+    height: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 10px;
+    color: orange;
 }
