@@ -1,6 +1,6 @@
 import './App.css';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BsSearch } from "react-icons/bs";
 import moment from 'moment/moment';
 
@@ -8,6 +8,32 @@ export default function App() {
   const [topic, setTopic] = useState("");
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    function trending() {
+      const options = {
+        method: 'GET',
+        url: 'https://bing-news-search1.p.rapidapi.com/news',
+        params: { safeSearch: 'Off', textFormat: 'Raw' },
+        headers: {
+          'X-BingApis-SDK': 'true',
+          'X-RapidAPI-Key': '8f6669f19bmshba740bef890ea3bp1e4445jsn0aeb066bb324',
+          'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+        }
+      };
+
+      axios.request(options).then(function (response) {
+        setData(response.data.value);
+        console.log(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
+    }
+    trending()
+  }, [])
+
+
+
 
   const getNews = (e) => {
     e.preventDefault();
@@ -50,10 +76,9 @@ export default function App() {
       </nav>
 
 
-      {(loading) ? 'loadingg..' : ""}
+      {(loading) ? <div className='pac-man' /> : ""}
 
       <div>{data.map(news => (
-
         <div key={news?.name}>
           <h1>{news?.name}</h1>
           <span>{moment(news?.datePublished).format('Do MMMM YYYY, h:mm a')}</span>

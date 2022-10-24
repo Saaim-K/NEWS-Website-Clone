@@ -33,7 +33,7 @@ nav {
 .form {
     border: none;
     background: #272B33;
-    color: orange;
+    color: #FF9900;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -49,10 +49,6 @@ nav {
     outline: none;
     background: transparent;
     margin-left: 10px;
-    color: orange;
+    color: #FF9900;
 }
-.images{
-    border: none;
-    width: 300px;
-    height: 300px;
-}
+
