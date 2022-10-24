@@ -21,7 +21,6 @@ export default function App() {
           'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
         }
       };
-
       axios.request(options).then(function (response) {
         setData(response.data.value);
         console.log(response.data);
@@ -31,10 +30,6 @@ export default function App() {
     }
     trending()
   }, [])
-
-
-
-
   const getNews = (e) => {
     e.preventDefault();
     const options = {
@@ -60,7 +55,6 @@ export default function App() {
         console.error(error);
       });
   }
-
   return (
     <>
       <nav>
@@ -69,31 +63,14 @@ export default function App() {
           <span>hub</span>
         </div>
         <form className='form' onSubmit={getNews}>
-
           <BsSearch />
           <input type="search" onChange={(e) => { setTopic(e.target.value) }} />
         </form>
       </nav>
-
-
       {(loading) ? <div className='loader'><div className='pac-man' /></div> : ""}
-
       <div>{data.map(news => (
-
-
-
-
-
-
-
-
-
-
-
-
         <div key={news?.name}>
           <div className="projcard-container">
-
             <div className="projcard projcard-blue">
               <div className="projcard-innerbox">
                 <img className="projcard-img" src={news?.image?.thumbnail?.contentUrl.replace("&pid=News", "").replace("pid=News&", "").replace("pid=News", "")} alt='saaim' />
@@ -111,13 +88,6 @@ export default function App() {
       )
       }
       </div>
-
-
-
-
-
-
-
     </>
   );
 }
