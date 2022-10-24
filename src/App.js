@@ -72,14 +72,12 @@ export default function App() {
         <div key={news?.name}>
           <div className="projcard-container">
             <div className="projcard projcard-blue">
-              <div className="projcard-innerbox">
-                <img className="projcard-img" src={news?.image?.thumbnail?.contentUrl.replace("&pid=News", "").replace("pid=News&", "").replace("pid=News", "")} alt='saaim' />
-                <div className="projcard-textbox">
-                  <div className="projcard-title">{news?.name}</div>
-                  <div className="projcard-subtitle">{moment(news?.datePublished).format('Do MMMM YYYY, h:mm a')}</div>
-                  <div className="projcard-bar"></div>
-                  <div className="projcard-description">{news?.description}</div>
-                </div>
+              <img className="projcard-img" src={news?.image?.thumbnail?.contentUrl.replace("&pid=News", "").replace("pid=News&", "").replace("pid=News", "")} alt='saaim' />
+              <div className="projcard-textbox">
+                <div className="projcard-title">{news?.name}</div>
+                <div className="projcard-subtitle">{moment(news?.datePublished).format('Do MMMM YYYY, h:mm a')}</div>
+                <div className="projcard-bar"></div>
+                <div className="projcard-description">{news?.description}</div>
               </div>
             </div>
           </div>
