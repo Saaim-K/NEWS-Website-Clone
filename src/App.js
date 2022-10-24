@@ -33,6 +33,10 @@ export default function App() {
   return (
     <>
       <nav>
+        <div className="hub">
+          <span contenteditable="true">NEWS</span>
+          <span contenteditable="true">hub</span>
+        </div>
         <form onSubmit={getNews}>
 
           <input type="search" onChange={

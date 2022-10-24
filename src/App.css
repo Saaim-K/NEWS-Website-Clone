@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 53px;
+    background: #000000; 
+}
+.hub {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px;
+    margin-left: 80px;
+}
+
+.hub span:nth-child(2) {
+    background: #FF9900;
+    color: #000000;
+    border-radius: 6px;
+    padding: 3px 10px 3px 10px;
+    margin-left: 2px;
+}
