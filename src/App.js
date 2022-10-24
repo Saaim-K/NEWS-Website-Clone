@@ -25,10 +25,12 @@ export default function App() {
     axios.request(options)
       .then(function (response) {
         console.log(response.data.value);
+        setLoading(false)
         setData(response.data.value);
         console.log(topic);
       })
       .catch(function (error) {
+        setLoading(false)
         console.error(error);
       });
   }
@@ -48,7 +50,7 @@ export default function App() {
       </nav>
 
 
-      {(data.length === 0) ? 'loadingg..' : ""}
+      {(loading) ? 'loadingg..' : ""}
 
       <div>{data.map(news => (
 
